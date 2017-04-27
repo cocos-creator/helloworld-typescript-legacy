@@ -1,7 +1,8 @@
-import ccclass = cc._decorator.ccclass;
-import {SuperClass} from "./SuperClass";
+import SuperClass from "./SuperClass";
+const {ccclass} = cc._decorator;
+
 @ccclass
-export class ChildClass extends SuperClass {
+export default class ChildClass extends SuperClass {
     protected async testAsync(): Promise<string> {
         return new Promise<string>((resolve, reject) => {
             setTimeout(() => {
