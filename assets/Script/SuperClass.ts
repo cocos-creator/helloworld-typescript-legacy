@@ -1,22 +1,19 @@
-import executeInEditMode = cc._decorator.executeInEditMode;
-import ccclass = cc._decorator.ccclass;
-import property = cc._decorator.property;
-import executionOrder = cc._decorator.executionOrder;
+const {executeInEditMode, ccclass, property, executionOrder} = cc._decorator;
 
 @ccclass
 @executeInEditMode
 @executionOrder(1)
-export class SuperClass extends cc.Component {
+export default class SuperClass extends cc.Component {
 
     @property(cc.Label)
-    public label: cc.Label;
+    label: cc.Label;
 
     @property({
         default: "hello"
     })
-    public text: string = 'hello';
+    text: string = 'hello';
 
-    public async onLoad() {
+    async onLoad() {
         // init logic
         this.label.string = await this.testAsync();
     }
