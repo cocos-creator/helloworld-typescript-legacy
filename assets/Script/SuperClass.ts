@@ -1,7 +1,6 @@
-const {executeInEditMode, ccclass, property, executionOrder} = cc._decorator;
+const {ccclass, property, executionOrder} = cc._decorator;
 
 @ccclass
-@executeInEditMode
 @executionOrder(1)
 export default class SuperClass extends cc.Component {
 
