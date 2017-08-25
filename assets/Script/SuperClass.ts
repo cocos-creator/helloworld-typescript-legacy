@@ -5,11 +5,9 @@ const {ccclass, property, executionOrder} = cc._decorator;
 export default class SuperClass extends cc.Component {
 
     @property(cc.Label)
-    label: cc.Label;
+    label: cc.Label = null;
 
-    @property({
-        default: "hello"
-    })
+    @property
     text: string = 'hello';
 
     async onLoad() {
