@@ -8193,7 +8193,8 @@ declare module cc {
 		After loaded, you can acquire them by passing the url to this API.
 		@param type Only asset of type will be returned if this argument is supplied. 
 		*/
-		getRes(url : string, type? : Function) : any;		
+		getRes(url : string) : any;
+		getRes<T extends cc.Asset>(url : string, type : {new():T}) : T;
 		/** !#en
 		Release the content of an asset or an array of assets by uuid.
 		Start from v1.3, this method will not only remove the cache of the asset in loader, but also clean up its content.
